@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- Code for Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #8ECDDD;">
+        <div class="container-fluid">
+            <a href="/home">
+                <img class="logo" border="0" alt="iLearn logo" src="{{ url_for('static', filename='logo.jpg') }}"
+                    width="40" height="40">
+            </a>
+            <span class="navbar-brand mb-0 h1">AdmitHub</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 360px;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contactus">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="banner">Welcome to our College Recommendation System!</h1>
+    <p id="abc">Are You Ready And Excited for Getting Admission in the Best Colleges!!!</p>
+    <div class="form-container">
+        <div class="form-card">
+            <!-- <form action="/recommendation" method="post">
+                <div class="mb-3">
+                    <label for="Marks" class="form-label">Your Scores</label>
+                    <input type="number" class="form-control mb-3" name="Score" id="Marks" aria-describedby="emailHelp">
+                    <div class="mb-4">
+                        <label for="exampleInputPassword1" class="form-label">Desired Location of College</label>
+                        <input type="password" class="form-control" name="location" id="exampleInputPassword1">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-outline-info mx-auto">Let's Go!</button>
+                    </div>
+                </div>
+            </form> -->
+            <form action="/recommendations" method="post">
+                <div class="mb-3 row">
+                    <label for="Marks" class="col-form-label col-md-3">Your Scores</label>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control mb-3" name="Score" id="Marks" aria-describedby="emailHelp" step="0.01">
+                    </div>
+                    <label for="DesiredBranch" class="col-form-label col-md-3">Desired Branch</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control mb-3" name="desiredBranch" id="DesiredBranch">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="Location" class="col-form-label col-md-3">Desired Location of College</label>
+                    <div class="col-md-3">
+                        <select class="form-control" name="location" id="Location">
+                            <option value="">Select a location</option>
+                            <!-- You can use JavaScript to populate this dropdown dynamically -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="exam" value="MHT-CET"> MHT-CET
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="exam" value="JEE(Main)"> JEE(Main)
+                        </label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-info mx-auto">Let's Go!</button>
+                </div>
+            </form>
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="footer" style="background-color: #22668D;">
+        &copy; 2023 AdmitHub. All rights reserved.
+        <p> Made by Ahmed Khan || Afaf Ahmed Khan || Abdul Rahman || Aatef Quazi</p>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        // Function to fetch and populate city dropdown
+        function populateCityDropdown() {
+            var headers = new Headers();
+            headers.append("X-CSCAPI-KEY", "MGgxNkYxZ25ja1FES0hnUkhySU5IT2VzU1JDQ1M1ZjZ0dnBWbFFHag==");
+    
+            var requestOptions = {
+                method: 'GET',
+                headers: headers,
+                redirect: 'follow'
+            };
+    
+            fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities", requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    var locationDropdown = document.getElementById("Location");
+                    locationDropdown.innerHTML = ""; // Clear existing options
+    
+                    // Add a default option
+                    var defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.text = "Select a city";
+                    locationDropdown.appendChild(defaultOption);
+    
+                    // Loop through the city data and add options to the dropdown
+                    data.forEach(city => {
+                        var option = document.createElement("option");
+                        option.value = city.name;
+                        option.text = city.name;
+                        locationDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.log('error', error));
+        }
+    
+        // Call the function to populate the dropdown when the page loads
+        window.onload = populateCityDropdown;
+    </script>
+    
+</body>
+
+</html>
