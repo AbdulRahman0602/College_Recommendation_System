@@ -35,7 +35,7 @@ bash
 python app.py
 
 
-5. Open your web browser and go to http://localhost:<portnumber> to access the application.
+5. Open your web browser and go to http://localhost:(PortNumber) to access the application.
 
 
 
